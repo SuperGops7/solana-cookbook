@@ -9,10 +9,10 @@ head:
       content: Solana Cookbook | Interacting with Tokens
   - - meta
     - name: description
-      content: Start Interacting with Tokens, Mint, Transfer, Burn and Learn more Recipes for Building on Solana at The Solana cookbook.
+      content: Start Interacting with Tokens, Mint, Transfer, Burn and Learn more references for Building on Solana at The Solana cookbook.
   - - meta
     - name: og:description
-      content: Start Interacting with Tokens, Mint, Transfer, Burn and Learn more Recipes for Building on Solana at The Solana cookbook.
+      content: Start Interacting with Tokens, Mint, Transfer, Burn and Learn more references for Building on Solana at The Solana cookbook.
   - - meta
     - name: og:image
       content: https://solanacookbook.com/cookbook-sharing-card.png
@@ -186,6 +186,23 @@ single call.
   </template>
 
   </SolanaCodeGroupItem>
+
+<SolanaCodeGroupItem title="Rust" >
+
+  <template v-slot:default>
+
+@[code](@/code/token/get-token-balance/get-token-balance.en.rs)
+
+  </template>
+
+  <template v-slot:preview>
+
+@[code](@/code/token/get-token-balance/get-token-balance.preview.en.rs)
+
+  </template>
+
+  </SolanaCodeGroupItem>
+
 </SolanaCodeGroup>
 
 ::: tip

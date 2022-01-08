@@ -3,16 +3,16 @@ title: Account
 head:
   - - meta
     - name: title
-      content: Solana Cookbook | Account Recipes
+      content: Solana Cookbook | Account References
   - - meta
     - name: og:title
-      content: Solana Cookbook | Account Recipes
+      content: Solana Cookbook | Account References
   - - meta
     - name: description
-      content: Accounts can be used as System Account, With Seed and/or Program Derived Address. Learn about Accounts and more Recipes for Building on Solana at The Solana cookbook.
+      content: Accounts can be used as System Account and/or Program Derived Addresses. Learn about Accounts and more references for building on Solana at The Solana cookbook.
   - - meta
     - name: og:description
-      content: Accounts can be used as System Account, With Seed and/or Program Derived Address. Learn about Accounts and more Recipes for Building on Solana at The Solana cookbook.
+      content: Accounts can be used as System Account and/or Program Derived Addresses. Learn about Accounts and more references for building on Solana at The Solana cookbook.
   - - meta
     - name: og:image
       content: https://solanacookbook.com/cookbook-sharing-card.png
@@ -61,6 +61,21 @@ write to its data or transfer lamports. When creating an account, we have to pre
   </template>
 
   </SolanaCodeGroupItem>
+  <SolanaCodeGroupItem title="Rust">
+
+  <template v-slot:default>
+
+@[code](@/code/accounts/create-system-account/create-system-account.en.rs)
+
+  </template>
+
+  <template v-slot:preview>
+
+@[code](@/code/accounts/create-system-account/create-system-account.preview.en.rs)
+
+  </template>
+
+  </SolanaCodeGroupItem>
 </SolanaCodeGroup>
 
 ## Calculating Rent Exemption
@@ -73,6 +88,12 @@ the amount of data you intend to store in the account.
   <CodeGroupItem title="TS" active>
 
 @[code](@/code/accounts/rent-exemption/rent-exemption.en.ts)
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="Rust">
+
+@[code](@/code/accounts/rent-exemption/rent-exemption.en.rs)
 
   </CodeGroupItem>
 
@@ -90,7 +111,7 @@ You can use `create account with seed` to manage your accounts instead of creati
 ### Generate
 
 <SolanaCodeGroup>
-  <SolanaCodeGroupItem title="rust" active>
+  <SolanaCodeGroupItem title="TS" active>
 
   <template v-slot:default>
 
@@ -105,12 +126,27 @@ You can use `create account with seed` to manage your accounts instead of creati
   </template>
 
   </SolanaCodeGroupItem>
+
+  <SolanaCodeGroupItem title="Rust">
+
+  <template v-slot:default>
+
+@[code](@/code/accounts/create-account-with-seed/generate/main.en.rs)
+
+  </template>
+
+  <template v-slot:preview>
+
+@[code](@/code/accounts/create-account-with-seed/generate/main.preview.en.rs)
+
+  </template>
+  </SolanaCodeGroupItem>
 </SolanaCodeGroup>
 
 ### Create
 
 <SolanaCodeGroup>
-  <SolanaCodeGroupItem title="rust" active>
+  <SolanaCodeGroupItem title="TS" active>
 
   <template v-slot:default>
 
@@ -125,12 +161,28 @@ You can use `create account with seed` to manage your accounts instead of creati
   </template>
 
   </SolanaCodeGroupItem>
+
+  <SolanaCodeGroupItem title="Rust" active>
+
+  <template v-slot:default>
+
+@[code](@/code/accounts/create-account-with-seed/creation/main.en.rs)
+
+  </template>
+
+  <template v-slot:preview>
+
+@[code](@/code/accounts/create-account-with-seed/creation/main.preview.en.rs)
+
+  </template>
+
+  </SolanaCodeGroupItem>
 </SolanaCodeGroup>
 
 ### Transfer
 
 <SolanaCodeGroup>
-  <SolanaCodeGroupItem title="rust" active>
+  <SolanaCodeGroupItem title="TS" active>
 
   <template v-slot:default>
 
@@ -175,6 +227,12 @@ This may fail because the result (pda) is on curve. You can use
 @[code](@/code/accounts/program-derived-address/derived-a-pda/create-program-address.en.ts)
 
   </CodeGroupItem>
+
+  <CodeGroupItem title="Rust">
+
+@[code](@/code/accounts/program-derived-address/derived-a-pda/create-program-address.en.rs)
+
+  </CodeGroupItem>
 </CodeGroup>
 
 2. Find Program Address
@@ -188,6 +246,12 @@ and seed.
   <CodeGroupItem title="TS" active>
 
 @[code](@/code/accounts/program-derived-address/derived-a-pda/find-program-address.en.ts)
+
+  </CodeGroupItem>
+
+  <CodeGroupItem title="Rust">
+
+@[code](@/code/accounts/program-derived-address/derived-a-pda/find-program-address.en.rs)
 
   </CodeGroupItem>
 </CodeGroup>
@@ -290,7 +354,7 @@ The below shows a single instruction `system_instruction::create_account` that c
 
 ## Get Program Accounts
 
-Return all accounts owned by a program. Refer to the [ingredients section](../ingredients/get-program-accounts.md) for more information on `getProgramAccounts` and its configuration.
+Return all accounts owned by a program. Refer to the [guides section](../guides/get-program-accounts.md) for more information on `getProgramAccounts` and its configuration.
 
 <CodeGroup>
   <CodeGroupItem title="TS" active>
@@ -299,6 +363,11 @@ Return all accounts owned by a program. Refer to the [ingredients section](../in
 
   </CodeGroupItem>
 
+  <CodeGroupItem title="Rust">
+
+@[code](@/code/get-program-accounts/basic/basic.en.rs)
+
+  </CodeGroupItem>
   <CodeGroupItem title="CLI">
 
 @[code](@/code/get-program-accounts/basic/basic.en.sh)
@@ -369,10 +438,25 @@ You can close an account (erase all stored data) by removing all SOL. (you can r
   </template>
 
   </SolanaCodeGroupItem>
+  <SolanaCodeGroupItem title="Rust">
+
+  <template v-slot:default>
+
+@[code](@/code/accounts/get-balance/main.en.rs)
+
+  </template>
+
+  <template v-slot:preview>
+
+@[code](@/code/accounts/get-balance/main.preview.en.rs)
+
+  </template>
+
+  </SolanaCodeGroupItem>
 </SolanaCodeGroup>
 
 ::: tip
-If you want to get a token balance, you will need to know the address of token account. The more infotmation can refer to [Token Recipes](token.md)
+If you want to get a token balance, you will need to know the address of token account. The more infotmation can refer to [Token References](token.md)
 :::
 
 [1]: https://docs.solana.com/developing/clients/javascript-reference#systemprogram
